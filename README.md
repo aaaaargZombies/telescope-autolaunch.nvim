@@ -7,8 +7,8 @@ If git status is dirty it will launch `:Teleschop git_status` if it's clean it w
 set up with `lazy.nvim`
 
 ```lua
-return {
-  name = "telescope-autolaunch",
+{
+  "aaaaargzombies/telescope-autolaunch",
   event = "VimEnter",
   config = function()
     require("custom.autolaunch").setup()
