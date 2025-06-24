@@ -8,10 +8,10 @@ set up with `lazy.nvim`
 
 ```lua
 {
-  "aaaaargzombies/telescope-autolaunch",
-  event = "VimEnter",
+  'aaaaargzombies/telescope-autolaunch.nvim',
+  event = 'VimEnter',
   config = function()
-    require("custom.autolaunch").setup()
+    require('telescope-autolaunch').setup()
   end,
-}
+},
 ```
