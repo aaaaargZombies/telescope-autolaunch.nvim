@@ -6,16 +6,13 @@ function M.setup()
 	local cwd = vim.fn.getcwd()
 
 	Job:new({
-		command = "git",
-		args = { "status", "--porcelain" },
 		cwd = cwd,
-		on_exit = function(j2, _)
-			local result = j2:result()
-			if #result > 0 then
-				vim.schedule(function()
-					require("telescope.builtin").git_status()
-				end)
-			else
+		command = "git",
+		args = { "rev-parse", "--is-inside-work-tree" },
+		on_exit = function(j, _)
+			local result = j:result()
+			-- If inside a git repo, launch telescope.find_files
+			if #result > 0 and result[1] == "true" then
 				vim.schedule(function()
 					require("telescope.builtin").find_files()
 				end)
