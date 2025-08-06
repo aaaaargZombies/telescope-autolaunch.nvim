@@ -1,6 +1,6 @@
 # Telescope Autolaunch
 
-If git status is dirty it will launch `:Teleschop git_status` if it's clean it will launch `:Telescope find_files`
+Launch `:Telescope find_files` if in a git directory and not in commit message
 
 ## Install
 
